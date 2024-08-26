@@ -77,7 +77,7 @@ test.describe("Authentication Tests", () => {
   });
 
   test.describe("Logout Tests", () => {
-    test("Logout after successful login", async ({ page }) => {
+    test("Logout after successful login.", async ({ page }) => {
       const loginPage = new LoginPage(page);
       await loginPage.navigate();
       await loginPage.login(
