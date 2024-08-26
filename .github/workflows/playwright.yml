@@ -10,18 +10,16 @@ on:
 
 jobs:
   test:
+    name: playwright
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: dependancy install
+        uses: actions/setup-node@v4
         with:
-          node-version: "16"
+          node-version: "20"
 
-      - name: Install dependencies
-        run: npm install
+      - name: playwright
+        run: npm test
 
-      - name: Run Playwright tests
-        run: npx playwright test --reporter=github
